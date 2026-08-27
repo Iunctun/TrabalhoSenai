@@ -1,0 +1,14 @@
+{
+  "name": "clinical-excellence",
+  "version": "1.0.0",
+  "description": "Site de clínica particular com agendamento — projeto acadêmico SENAI",
+  "private": true,
+  "scripts": {
+    "start": "http-server -p 8080 -c-1",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "http-server": "^14.1.1"
+  }
+}

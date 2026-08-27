@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vitae Clinic | Excelência em Saúde</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eceef0",
+                        "primary-container": "#131b2e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#007165",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary": "#006b5f",
+                        "secondary-fixed": "#62fae3",
+                        "surface-tint": "#565e74",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary-fixed": "#c9e6ff",
+                        "primary-fixed": "#dae2fd",
+                        "outline-variant": "#c6c6cd",
+                        "on-surface-variant": "#45464d",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#008cc7",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-tertiary-fixed": "#001e2f",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#bec6e0",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-background": "#191c1e",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "tertiary-container": "#001e2f",
+                        "primary": "#000000",
+                        "on-secondary-fixed": "#00201c",
+                        "outline": "#76777d",
+                        "secondary-container": "#62fae3",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "section-gap-desktop": "120px",
+                        "section-gap-mobile": "64px",
+                        "gutter": "24px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["30px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #191c1e; }
+        .glass-nav { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        .soft-shadow { box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.05); }
+        .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Subtle reveal animation for sections */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-high/80 backdrop-blur-md shadow-sm border-b-0">
+<div class="flex justify-between items-center px-gutter max-w-container-max-width mx-auto h-20">
+<a class="flex items-center gap-2 scale-95 active:scale-98 transition-transform" href="#">
+<img alt="Vitae Clinic Logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATfOdBKZOpUqPXhiA5s-txdZH4_P30HYx7axwl33xQYLr_Asz4ZwkQhk5heHXwFSdWU3Aolon-wEazKzfo5w9BhWzmtXmtbT5qzbir_1_EAQpRTbQ3AZiDZH1f-GdFZMo_u-sZjS5d7ClcR9WNbQKtRilm53U8qdOhwWDWtA8D6pLwrsn8Krhsrw2Wvh1T8bRQ50WZaZxkwasaEG_lMKlCTi2HFOQFZ2bhxBXfwbSSX4AC9c57eOqN"/>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed">Vitae Clinic</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary font-body-md text-body-md" href="#inicio">Início</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md" href="#especialidades">Especialidades</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md" href="#profissionais">Profissionais</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md" href="#como-funciona">Como Funciona</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md" href="#beneficios">Benefícios</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-body-md text-body-md" href="#faq">FAQ</a>
+</nav>
+<a class="hidden md:flex items-center justify-center bg-primary text-white font-label-md text-label-md px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 scale-95 active:scale-98 transition-transform" href="#agendamento">
+                Agendar Consulta
+            </a>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-section-gap-mobile md:pb-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max-width mx-auto" id="inicio">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2 space-y-6 reveal active">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">Cuidado Humanizado e Excelência em Saúde Particular</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Agende sua consulta de forma rápida e segura. Nossa equipe de especialistas está pronta para oferecer o melhor atendimento para você e sua família.</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="flex items-center justify-center bg-primary text-white font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30" href="#agendamento">
+                        Agendar Agora
+                    </a>
+<a class="flex items-center justify-center bg-surface-container-lowest text-primary border border-outline-variant font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-surface-container transition-colors" href="#sobre">
+                        Conheça a Clínica
+                    </a>
+</div>
+</div>
+<div class="w-full md:w-1/2 reveal active delay-100">
+<div class="relative rounded-2xl overflow-hidden soft-shadow aspect-[4/3]">
+<img class="object-cover w-full h-full" data-alt="A modern, high-end medical clinic reception area, bright natural light, minimalist interior design, comfortable seating, soft white and neutral tones with subtle green accents, conveying a sense of calm and professional premium healthcare." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuNyb-JNbiXuAdZp0l4-Isfz1Qy9GOMAb4tE4XvRwk1LGtiiscnQJHYkJ0imIIPanaKniCiIAdQA-BnUo8kbq9Plxu2z2MyhumZyF8_lQrgXn6zxG1XSC_Zk5MZTgqp17kWzozhioSdLKWYGe5C-oXsqdwB3Oy8-yxNUd8wXbh8MPC-T00LDc4ssXkivh7Ujq11SrSXVy3vQ1558dp_T_7x5wuMRteoLzIh91_1zvklSQS5f0V0O9P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/20 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Especialidades Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max-width mx-auto" id="especialidades">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Especialidades</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Atendimento completo em diversas áreas médicas, com profissionais altamente qualificados.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Especialidade Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow hover-lift reveal delay-100 border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="stethoscope">stethoscope</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 text-lg">Clínica Geral</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Acompanhamento da saúde integral, diagnósticos e encaminhamentos precisos.</p>
+</div>
+</div>
+<!-- Especialidade Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow hover-lift reveal delay-200 border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="ecg_heart">ecg_heart</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 text-lg">Cardiologia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Prevenção, diagnóstico e tratamento das doenças do coração e sistema circulatório.</p>
+</div>
+</div>
+<!-- Especialidade Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow hover-lift reveal delay-300 border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="dermatology">dermatology</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 text-lg">Dermatologia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Cuidados com a pele, cabelos e unhas. Tratamentos clínicos e estéticos.</p>
+</div>
+</div>
+<!-- Especialidade Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow hover-lift reveal delay-400 border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="pediatrics">pediatrics</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 text-lg">Pediatria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Atenção dedicada à saúde da criança e do adolescente, do nascimento à juventude.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Agendamento Section (Crucial) -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max-width mx-auto bg-surface-container-low rounded-3xl my-12" id="agendamento">
+<div class="max-w-3xl mx-auto reveal">
+<div class="text-center mb-10">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Agende sua Consulta</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Preencha os dados abaixo e você será redirecionado para o nosso WhatsApp para confirmar o agendamento.</p>
+</div>
+<form class="bg-surface-container-lowest p-8 rounded-2xl soft-shadow space-y-6" id="agendamentoForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface" for="nome">Nome Completo *</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-secondary focus:ring-secondary text-body-md py-3 px-4" id="nome" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface" for="telefone">Tel/WhatsApp *</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-secondary focus:ring-secondary text-body-md py-3 px-4" id="telefone" placeholder="(00) 00000-0000" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface" for="especialidade_select">Tipo de Consulta *</label>
+<select class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-secondary focus:ring-secondary text-body-md py-3 px-4" id="especialidade_select" required="">
+<option value="">Selecione...</option>
+<option value="Clinica Geral">Clínica Geral</option>
+<option value="Cardiologia">Cardiologia</option>
+<option value="Dermatologia">Dermatologia</option>
+<option value="Pediatria">Pediatria</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface" for="data">Data Preferencial *</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-secondary focus:ring-secondary text-body-md py-3 px-4" id="data" required="" type="date"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface" for="observacoes">Observações (opcional)</label>
+<textarea class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-secondary focus:ring-secondary text-body-md py-3 px-4" id="observacoes" placeholder="Alguma informação importante para a consulta?" rows="3"></textarea>
+</div>
+<button class="w-full bg-secondary text-white font-label-md text-label-md py-4 rounded-lg hover:bg-secondary/90 transition-colors flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                    Agendar pelo WhatsApp
+                </button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-tertiary-container w-full py-section-gap-mobile md:py-base mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max-width mx-auto gap-base h-auto md:h-24 py-8 md:py-0">
+<div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-tertiary-fixed mb-2">Vitae Clinic</span>
+<span class="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container text-sm">© 2024 Vitae Clinic. Excelência em Saúde e Bem-estar.</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Privacidade</a>
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Termos de Uso</a>
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Agendamento</a>
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Carreiras</a>
+<a class="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Blog</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Form Handling for WhatsApp Redirect
+        document.getElementById('agendamentoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const especialidade = document.getElementById('especialidade_select').value;
+            const data = document.getElementById('data').value;
+            const obs = document.getElementById('observacoes').value;
+            
+            // Format WhatsApp Message
+            let mensagem = `Olá! Gostaria de solicitar um agendamento.%0A%0A`;
+            mensagem += `*Nome:* ${nome}%0A`;
+            mensagem += `*Telefone:* ${telefone}%0A`;
+            mensagem += `*Especialidade:* ${especialidade}%0A`;
+            if(data) mensagem += `*Data Preferencial:* ${data}%0A`;
+            if(obs) mensagem += `*Observações:* ${obs}%0A`;
+            
+            // Replace with actual clinic WhatsApp number (format: 5511999999999)
+            const numeroClinica = "5511000000000"; // INSIRA O NÚMERO AQUI
+            
+            const whatsappUrl = `https://wa.me/${numeroClinica}?text=${mensagem}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Simple Reveal Animation on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body></html>

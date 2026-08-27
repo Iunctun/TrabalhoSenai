@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendar Consulta | Clinical Excellence</title>
+    <meta name="description"
+        content="Solicite o agendamento da sua consulta na Clinical Excellence. Escolha especialidade, profissional, data e período." />
+    <meta name="theme-color" content="#f7f9fb" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col overflow-x-hidden">
+    <a href="#conteudo"
+        class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-4 focus:left-4 focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded">
+        Ir para o conteúdo
+    </a>
+
+    <!-- ================= Header ================= -->
+    <header id="mainHeader"
+        class="sticky top-0 w-full z-50 bg-surface/80 glass shadow-sm border-b border-outline-variant/40 transition-shadow duration-300">
+        <div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-20">
+            <a href="index.html" class="flex items-center gap-2 text-headline-sm font-bold text-primary">
+                <span class="material-symbols-outlined filled text-secondary">medical_services</span>
+                Clinical Excellence
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-label-md" aria-label="Navegação principal">
+                <a href="index.html#especialidades" class="text-on-surface-variant hover:text-secondary transition-colors">Especialidades</a>
+                <a href="index.html#profissionais" class="text-on-surface-variant hover:text-secondary transition-colors">Profissionais</a>
+                <a href="index.html#sobre" class="text-on-surface-variant hover:text-secondary transition-colors">Sobre Nós</a>
+                <a href="index.html#beneficios" class="text-on-surface-variant hover:text-secondary transition-colors">Benefícios</a>
+                <a href="index.html#faq" class="text-on-surface-variant hover:text-secondary transition-colors">FAQ</a>
+            </nav>
+
+            <span class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary text-label-md px-6 py-3 rounded-md shadow-soft"
+                aria-current="page">
+                Agendar Consulta
+            </span>
+
+            <button type="button"
+                class="menu-toggle md:hidden text-primary p-2 rounded-md hover:bg-surface-container transition-colors"
+                aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu de navegação">
+                <span class="material-symbols-outlined icon-open">menu</span>
+                <span class="material-symbols-outlined icon-close">close</span>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-surface-container-lowest border-t border-outline-variant/60">
+            <nav class="flex flex-col px-margin-mobile py-4 gap-1 text-body-md" aria-label="Navegação mobile">
+                <a href="index.html" class="py-3 text-on-surface-variant hover:text-secondary transition-colors">Início</a>
+                <a href="index.html#especialidades" class="py-3 text-on-surface-variant hover:text-secondary transition-colors">Especialidades</a>
+                <a href="index.html#profissionais" class="py-3 text-on-surface-variant hover:text-secondary transition-colors">Profissionais</a>
+                <a href="index.html#beneficios" class="py-3 text-on-surface-variant hover:text-secondary transition-colors">Benefícios</a>
+                <a href="index.html#faq" class="py-3 text-on-surface-variant hover:text-secondary transition-colors">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" class="flex-grow relative px-margin-mobile md:px-gutter py-12 md:py-20">
+        <!-- Decoração de fundo -->
+        <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-tertiary-fixed-dim/20 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary-fixed-dim/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <!-- ================= Formulário ================= -->
+        <div class="w-full max-w-3xl mx-auto glass-card rounded-lg p-6 sm:p-8 md:p-12 relative overflow-hidden">
+            <div class="text-center mb-10">
+                <h1 class="text-display-lg-mobile md:text-display-lg text-primary mb-4">Agende sua Consulta</h1>
+                <p class="text-body-lg text-on-surface-variant max-w-xl mx-auto">
+                    Preencha os dados abaixo para solicitar seu horário. Nossa equipe entrará em contato para confirmar.
+                </p>
+            </div>
+
+            <noscript>
+                <p class="text-body-md text-on-error-container bg-error-container rounded-md p-4 mb-6">
+                    Este formulário precisa de JavaScript para funcionar. Ative o JavaScript ou fale conosco pelo
+                    telefone <span data-clinica="telefone">(11) 3000-0000</span>.
+                </p>
+            </noscript>
+
+            <form id="bookingForm" novalidate>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Nome -->
+                    <div class="field">
+                        <div class="field-control">
+                            <input class="field-input" id="nome" name="nome" type="text" placeholder=" "
+                                autocomplete="name" />
+                            <label class="field-label" for="nome">Nome completo *</label>
+                            <span class="material-symbols-outlined field-status" aria-hidden="true">check_circle</span>
+                        </div>
+                        <p class="field-error" role="alert">
+                            <span class="material-symbols-outlined" aria-hidden="true">error</span><span></span>
+                        </p>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="field">
+                        <div class="field-control">
+                            <input class="field-input" id="whatsapp" name="whatsapp" type="tel" placeholder=" "
+                                inputmode="numeric" autocomplete="tel" />
+                            <label class="field-label" for="whatsapp">WhatsApp (DDD + número) *</label>
+                            <span class="material-symbols-outlined field-status" aria-hidden="true">check_circle</span>
+                        </div>
+                        <p class="field-error" role="alert">
+                            <span class="material-symbols-outlined" aria-hidden="true">error</span><span></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- E-mail -->
+                <div class="field mt-5">
+                    <div class="field-control">
+                        <input class="field-input" id="email" name="email" type="email" placeholder=" "
+                            autocomplete="email" />
+                        <label class="field-label" for="email">E-mail (opcional)</label>
+                        <span class="material-symbols-outlined field-status" aria-hidden="true">check_circle</span>
+                    </div>
+                    <p class="field-error" role="alert">
+                        <span class="material-symbols-outlined" aria-hidden="true">error</span><span></span>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                    <!-- Especialidade -->
+                    <div class="field">
+                        <div class="field-control">
+                            <select class="field-input" id="especialidade" name="especialidade">
+                                <option value="">Selecione...</option>
+                            </select>
+                            <label class="field-label" for="especialidade">Especialidade *</label>
+                            <span class="material-symbols-outlined field-arrow" aria-hidden="true">expand_more</span>
+                            <span class="material-symbols-outlined field-status" aria-hidden="true">check_circle</span>
+                        </div>
+                        <p class="field-error" role="alert">
+                            <span class="material-symbols-outlined" aria-hidden="true">error</span><span></span>
+                        </p>
+                    </div>
+
+                    <!-- Profissional -->
+                    <div class="field">
+                        <div class="field-control">
+                            <select class="field-input" id="profissional" name="profissional"></select>
+                            <label class="field-label" for="profissional">Profissional (opcional)</label>
+                            <span class="material-symbols-outlined field-arrow" aria-hidden="true">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                    <!-- Data -->
+                    <div class="field">
+                        <div class="field-control">
+                            <input class="field-input" id="data" name="data" type="date" placeholder=" " />
+                            <label class="field-label" for="data">Data desejada *</label>
+                        </div>
+                        <p class="field-error" role="alert">
+                            <span class="material-symbols-outlined" aria-hidden="true">error</span><span></span>
+                        </p>
+                    </div>
+
+                    <!-- Período -->
+                    <div class="field">
+                        <div class="field-control">
+                            <select class="field-input" id="periodo" name="periodo">
+                                <option value="">Selecione...</option>
+                            </select>
+                            <label class="field-label" for="periodo">Período *</label>
+                            <span class="material-symbols-outlined field-arrow" aria-hidden="true">expand_more</span>
+                            <span class="material-symbols-outlined field-status" aria-hidden="true">check_circle</span>
+                        </div>
+                        <p class="field-error" role="alert">
+                            <span class="material-symbols-outlined" aria-hidden="true">error</span><span></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Observações -->
+                <div class="field mt-5">
+                    <div class="field-control">
+                        <textarea class="field-input" id="observacoes" name="observacoes" rows="3"
+                            placeholder=" "></textarea>
+                        <label class="field-label" for="observacoes">Observações (sintomas, convênio, etc.)</label>
+                    </div>
+                </div>
+
+                <p class="text-body-md text-on-surface-variant mt-5">
+                    Ao enviar, você concorda que a clínica entre em contato para confirmar o horário. Esta é uma
+                    <strong>solicitação</strong> — a consulta só é confirmada após retorno da equipe.
+                </p>
+
+                <!-- Ações -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                    <button type="submit"
+                        class="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-on-primary text-label-md font-bold py-4 px-6 rounded-md shadow-soft hover:bg-primary/90 active:scale-[0.98] transition-all duration-200">
+                        Solicitar Agendamento
+                        <span class="material-symbols-outlined filled">arrow_forward</span>
+                    </button>
+
+                    <button type="button" id="btnWhatsApp"
+                        class="flex-1 inline-flex items-center justify-center gap-2 bg-surface-container-lowest border border-secondary text-secondary text-label-md font-bold py-4 px-6 rounded-md hover:bg-secondary/5 active:scale-[0.98] transition-all duration-200">
+                        <span class="material-symbols-outlined">chat</span>
+                        Enviar pelo WhatsApp
+                    </button>
+                </div>
+            </form>
+
+            <!-- Overlay de sucesso -->
+            <div id="successMessage" aria-hidden="true"
+                class="success-overlay absolute inset-0 bg-surface-container-lowest/97 backdrop-blur-sm z-20 flex items-center justify-center p-6 sm:p-8 rounded-lg overflow-y-auto">
+                <div class="max-w-md w-full text-center">
+                    <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="material-symbols-outlined filled text-secondary text-5xl">check_circle</span>
+                    </div>
+
+                    <h2 tabindex="-1" class="text-headline-md text-primary mb-2">Solicitação enviada!</h2>
+                    <p id="successAuto" class="text-body-lg text-on-surface-variant mb-6">
+                        Recebemos seus dados. Nossa equipe confirmará o horário em breve.
+                    </p>
+
+                    <div id="successResumo" class="text-left bg-surface-container-low rounded-lg p-4 mb-6"></div>
+
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a id="successWhatsApp" href="#" target="_blank" rel="noopener"
+                            class="flex-1 inline-flex items-center justify-center gap-2 bg-secondary text-on-secondary text-label-md py-3 px-6 rounded-md hover:bg-secondary/90 transition-colors">
+                            <span class="material-symbols-outlined">chat</span>
+                            Enviar pelo WhatsApp
+                        </a>
+                        <button type="button" id="btnNovoAgendamento"
+                            class="flex-1 bg-surface-container-high text-on-surface text-label-md py-3 px-6 rounded-md hover:bg-surface-container-highest transition-colors">
+                            Fazer novo agendamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= Solicitações salvas ================= -->
+        <section id="meusAgendamentos" class="hidden w-full max-w-3xl mx-auto mt-12">
+            <h2 class="text-headline-sm text-primary mb-2">Minhas solicitações</h2>
+            <p class="text-body-md text-on-surface-variant mb-6">
+                Guardadas apenas neste navegador, para você consultar ou reenviar quando quiser.
+            </p>
+            <ul id="listaAgendamentos" class="space-y-4"></ul>
+        </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="border-t border-outline-variant bg-surface-container-lowest">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-margin-mobile md:px-gutter py-section-gap-mobile max-w-container-max-width mx-auto">
+            <div class="md:col-span-2 space-y-3">
+                <p class="text-headline-sm font-bold text-primary flex items-center gap-2">
+                    <span class="material-symbols-outlined filled text-secondary">medical_services</span>
+                    Clinical Excellence
+                </p>
+                <p class="text-body-md text-on-surface-variant" data-clinica="endereco"></p>
+                <p class="text-body-md text-on-surface-variant" data-clinica="horario"></p>
+            </div>
+
+            <div>
+                <h2 class="text-label-md font-bold text-primary mb-4">Navegação</h2>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-body-md text-on-surface-variant hover:text-secondary transition-colors">Início</a></li>
+                    <li><a href="index.html#especialidades" class="text-body-md text-on-surface-variant hover:text-secondary transition-colors">Especialidades</a></li>
+                    <li><a href="index.html#faq" class="text-body-md text-on-surface-variant hover:text-secondary transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-label-md font-bold text-primary mb-4">Contato</h2>
+                <ul class="space-y-3">
+                    <li><a data-tel-link href="tel:+551130000000" class="text-body-md text-on-surface-variant hover:text-secondary transition-colors"><span data-clinica="telefone"></span></a></li>
+                    <li><a data-whatsapp-link="Olá! Gostaria de agendar uma consulta." href="#" target="_blank" rel="noopener" class="text-body-md text-on-surface-variant hover:text-secondary transition-colors">WhatsApp</a></li>
+                    <li><span class="text-body-md text-on-surface-variant" data-clinica="email"></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-outline-variant/50">
+            <p class="px-margin-mobile md:px-gutter py-6 max-w-container-max-width mx-auto text-center text-body-md text-on-surface-variant">
+                © <span data-ano>2024</span> Clinical Excellence. Projeto acadêmico — SENAI.
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/clinica.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/agendamento.js"></script>
+</body>
+
+</html>

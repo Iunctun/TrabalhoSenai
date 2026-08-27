@@ -12,3 +12,9 @@ Desktop.ini
 # Node (caso um servidor local seja usado)
 node_modules/
 npm-debug.log*
+
+# Playwright (testes)
+test-results/
+playwright-report/
+/playwright/.cache/
+blob-report/

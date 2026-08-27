@@ -39,9 +39,22 @@ Depois acesse <http://localhost:8080>.
 │       ├── clinica.js    Dados da clínica: contato, especialidades, equipe
 │       ├── main.js       Header, menu mobile, FAQ, animações, form rápido
 │       └── agendamento.js  Validação, máscara, WhatsApp e histórico local
+├── tests/                Testes funcionais (Playwright) — ver tests/README.md
 └── stitch_agendamento_cl_nico_particular_moderno/
                           Export original do Stitch, mantido como referência
 ```
+
+## Testes
+
+Testes funcionais que abrem o site no Edge e simulam o uso real:
+
+```bash
+npm install   # uma vez
+npm test
+```
+
+São 5 cenários (navegação, FAQ, formulário rápido, validação e agendamento
+completo). Detalhes em [`tests/README.md`](tests/README.md).
 
 ## Funcionalidades
 
